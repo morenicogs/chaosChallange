@@ -6,7 +6,8 @@
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  settings.grid = new Matrix(width, height, 20)
+//   settings.grid = new Matrix(width, height, 20)
+  settings.grid = new Grid(width, height)
 
 //   frameRate(1)
 }

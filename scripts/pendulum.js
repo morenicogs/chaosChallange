@@ -2,7 +2,10 @@ class Pendulum {
 	constructor(originX, originXY, l, firstAngle, secondAngle) {
 		this.origin = createVector(originX, originXY)
 		this.balls = [new Ball(0, 0, settings.ball.mass, 2.5, firstAngle), new Ball(0, 0, settings.ball.mass, 2.5, secondAngle)]
-		this.length = l
+		this.length = {
+			first: l,
+			second: l
+		}
 		
 		this.updateLocations()
 		this.getColor()
@@ -21,13 +24,13 @@ class Pendulum {
 
 	updateLocations() {
 		
-		const x1 = this.length * Math.sin(this.balls[0].angle)
-		const y1 = this.length * Math.cos(this.balls[0].angle)
+		const x1 = this.length.first * Math.sin(this.balls[0].angle)
+		const y1 = this.length.first * Math.cos(this.balls[0].angle)
 
 		this.balls[0].position.set(x1 + this.origin.x, y1 + this.origin.y)
 
-		const x2 = x1 + this.length * Math.sin(this.balls[1].angle)
-		const y2 = y1 + this.length * Math.cos(this.balls[1].angle)
+		const x2 = x1 + this.length.second * Math.sin(this.balls[1].angle)
+		const y2 = y1 + this.length.second * Math.cos(this.balls[1].angle)
 
 		this.balls[1].position.set(x2 + this.origin.x, y2 + this.origin.y)
 
@@ -41,8 +44,8 @@ class Pendulum {
 		const a1 = this.balls[0].angle
 		const a2 = this.balls[1].angle
 
-		const r1 = this.length
-		const r2 = this.length
+		const r1 = this.length.first
+		const r2 = this.length.second
 
 		const a1_v = this.balls[0].angularVelocity
 		const a2_v = this.balls[1].angularVelocity
