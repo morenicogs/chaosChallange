@@ -4,6 +4,10 @@ function preload() {
 	if(settings.chaos.active) {
 		addChaosSettings()
 	}
+
+	if(settings.matrix.active) {
+		addMatrixSettings()
+	}
 	
 	if(settings.fractal.active) {
 		addFractalSettings()
@@ -18,6 +22,10 @@ function setup() {
 
 	if(settings.chaos.active) {
 		settings.grid = new Chaos(width, height)
+	}
+
+	if(settings.matrix.active) {
+		settings.grid = new Matrix(width, height)
 	}
 
 	if(settings.fractal.active) {
