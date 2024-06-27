@@ -1,7 +1,8 @@
 class Matrix{
-	constructor(w, h, detail) {
+	constructor(w, h) {
 		this.size = {width: w, height: h }
-		this.detail = detail
+		this.detail = settings.matrix.detail
+
 		this.cols = Math.floor(width/this.detail)
 		this.rows = Math.floor(height/this.detail)
 
@@ -17,7 +18,7 @@ class Matrix{
 				const originX =  col * this.detail + this.detail/2//(1/this.cols) *
 				const originY = row * this.detail + this.detail/2 //(1/this.rows) * 
 
-				const myPendulum = new Pendulum(originX, originY, this.detail/2, firstAngle, secondAngle)
+				const myPendulum = new Pendulum(originX, originY, this.detail/4, firstAngle, secondAngle)
 
 				settings.pendulums.push(myPendulum)
 			}
@@ -26,7 +27,7 @@ class Matrix{
 	}
 
 	display() {
-		strokeWeight(5)
+		strokeWeight(settings.matrix.strokeW)
 		settings.pendulums.forEach(p => p.display())
 	}
 

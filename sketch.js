@@ -1,13 +1,32 @@
 
-// TODO create grid with angle1 and angle2 as x and y axis
 // TODO Implement CCapture
+function preload() {
+	if(settings.chaos.active) {
+		addChaosSettings()
+	}
+	
+	if(settings.fractal.active) {
+		addFractalSettings()
+	}
 
+	addAnimationSettings()
+}
 
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+	createCanvas(windowWidth, windowHeight);
+
+	if(settings.chaos.active) {
+		settings.grid = new Chaos(width, height)
+	}
+
+	if(settings.fractal.active) {
+		settings.grid = new Grid(width, height)
+	}
+  
 //   settings.grid = new Matrix(width, height, 20)
-  settings.grid = new Grid(width, height)
+//   settings.grid = new Grid(width, height)
+//   settings.grid = new Chaos(width, height)
 
 //   frameRate(1)
 }
