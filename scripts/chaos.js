@@ -1,7 +1,7 @@
 class Chaos { 
 	constructor(w, h) {
 		this.size = {width: w, height: h }
-		this.samples = 20
+		this.samples = settings.chaos.samples
 		this.diffMass = settings.chaos.conditions.mass - settings.ball.mass
 		this.diffLength = settings.chaos.conditions.length - settings.pendulum.length
 
