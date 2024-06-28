@@ -99,9 +99,9 @@ class Pendulum {
 	}
 
 	getColor() {
-		const r = Math.min(255, 127 + 127 * Math.cos(this.balls[1].angle) * Math.sin(this.balls[0].angle))
-		const g = Math.min(255, 127 + 127 * Math.sin(this.balls[1].angle) * Math.sin(this.balls[0].angle))
-		const b = Math.min(255, 127 + 127 * Math.cos(this.balls[0].angle))
+		const r = Math.min(255, 127.5 + 127.5 * Math.cos(this.balls[1].angle) * Math.sin(this.balls[0].angle))
+		const g = Math.min(255, 127.5 + 127.5 * Math.sin(this.balls[1].angle) * Math.sin(this.balls[0].angle))
+		const b = Math.min(255, 127.5 + 127.5 * Math.cos(this.balls[0].angle))
 
 		this.color = {r,g,b}
 

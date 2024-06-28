@@ -9,7 +9,7 @@ const settings = {
 		length: 100,
 	},
 	grid: {},
-	animation: true,
+	animation: false,
 	matrix: {
 		active: false,
 		detail: 20,
@@ -24,9 +24,9 @@ const settings = {
 		}
 	},
 	fractal: {
-		active: true,
+		active: false,
 		pixelDensity: 3,
-	}
+	},
 }
 
 const pane = new Tweakpane.Pane();

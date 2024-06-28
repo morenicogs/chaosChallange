@@ -1,3 +1,4 @@
+let img
 
 // TODO Implement CCapture
 function preload() {
@@ -12,6 +13,7 @@ function preload() {
 	if(settings.fractal.active) {
 		addFractalSettings()
 	}
+
 
 	addAnimationSettings()
 }
@@ -31,6 +33,7 @@ function setup() {
 	if(settings.fractal.active) {
 		settings.grid = new Grid(width, height)
 	}
+
   
 //   settings.grid = new Matrix(width, height, 20)
 //   settings.grid = new Grid(width, height)
@@ -41,8 +44,9 @@ function setup() {
     
 function draw() {
   	// background(220);
-	  pixelDensity(3)
-	
+	  if(settings.fractal.active) {
+	  	pixelDensity(settings.fractal.pixelDensity)
+	  }
 	settings.grid.display()
 	settings.grid.update()
  	// settings.pendulums.forEach(pendulum => {
