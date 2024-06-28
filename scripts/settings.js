@@ -9,7 +9,7 @@ const settings = {
 		length: 100,
 	},
 	grid: {},
-	animation: false,
+	animation: true,
 	matrix: {
 		active: false,
 		detail: 20,
